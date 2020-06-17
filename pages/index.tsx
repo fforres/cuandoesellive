@@ -1,10 +1,7 @@
-import styled from 'styled-components'
+import { Home } from "../Pages/home";
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
-
-export default function Home() {
-  return <Title>My page</Title>
-}
+export default () => {
+  return (
+    <Home title="30 días de react - “Estilando nuestros pokemones con CSS in JS”" />
+  );
+};
