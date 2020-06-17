@@ -1,15 +1,15 @@
 import React from "react";
 import App from "next/app";
-import { GlobalStyleReset } from "../styles/reset";
-import { GlobalStyleFonts } from "../styles/fonts";
+import { GlobalReset, GlobalFonts, GlobalStyle } from "../styles";
 
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
       <>
-        <GlobalStyleReset />
-        <GlobalStyleFonts />
+        <GlobalReset />
+        <GlobalFonts />
+        <GlobalStyle />
         <Component {...pageProps} />
       </>
     );

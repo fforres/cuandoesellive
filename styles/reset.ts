@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyleReset = createGlobalStyle`
+export const GlobalReset = createGlobalStyle`
   /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
   html,
   body,

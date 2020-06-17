@@ -4,8 +4,8 @@ import {
   Title,
   BodyTextLarge,
   BodyText,
-} from "../Components/Typography";
-import { Theme } from "../styles/theme";
+} from "../../Components/Typography";
+import { Theme } from "../../styles/theme";
 
 export const PageTitle = styled.h1`
   ${TitleSmall}
