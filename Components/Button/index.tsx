@@ -17,6 +17,7 @@ const StyledButton = styled.button`
   min-width: 144px;
   width: fit-content;
   outline: 0;
+  cursor: pointer;
   transition: background ${Theme.animations.fast} ease-in-out,
     box-shadow ${Theme.animations.fast} ease-in-out;
   & :focus,
