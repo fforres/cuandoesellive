@@ -1,4 +1,3 @@
-// import { parse } from "date-fns";
 import { DateTime } from "luxon";
 
 // starting_time tiene que ser la hora PST
@@ -36,7 +35,7 @@ export const getParsedEvents = () => {
         zone: "UTC+7",
       }
     );
-    DateTime.console.log(currentDate.ordinal, isoDate.ordinal);
+    console.log(currentDate.ordinal, isoDate.ordinal);
     console.log(currentDate.ordinal - isoDate.ordinal);
     return {
       name: event.name,
