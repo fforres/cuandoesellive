@@ -13,7 +13,10 @@ export const PageTitle = styled.h1`
 `;
 
 export const Panel = styled.section`
+  position: relative;
   align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: hidden;
   display: flex;
   width: 100%;
   max-width: 1024px;

@@ -13,17 +13,16 @@ type KeyPress = {
  * @description get the diameter of the circle
  * @param {Boolean} active is the modal active?
  */
-const diameter = (active: Boolean) => active? `300vmax`: "132px"
+const diameter = (active: Boolean) => active? `300vmax`: "66px"
 
 
 const CalendarButton = styled.button<CalendarProps>`
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   right: 0px; 
   top: 0px; 
-  transform: translate(50%, -50%);
   bottom: 0%;  
-  border-radius: 50%;
+  border-bottom-left-radius: 100%;
   width: ${(props) => diameter(props.active)}; 
   height: ${(props) => diameter(props.active)}; 
   background: ${Theme.colors.purpleBase};
@@ -42,7 +41,7 @@ const CalendarButton = styled.button<CalendarProps>`
 
 /** @description Style for the close button (it is a div because buttons have to many styles) */
 const StyledClose = styled.button<CalendarProps>`
-  position: fixed;
+  position: absolute;
   opacity: ${(props) => props.active? '1': '0'};
   background: rgba(0,0,0,0) ;
   width: 25px;
@@ -71,7 +70,7 @@ const StyledClose = styled.button<CalendarProps>`
 
 /**@description this is the style for the container of the content in the modal have some delay in transitions  */
 const Content = styled.div<CalendarProps>`
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -81,7 +80,7 @@ const Content = styled.div<CalendarProps>`
 
 /** @description style for de icon this section have some delay in transitions */
 const IconContainer = styled.div<CalendarProps>`
-  position: fixed;
+  position: absolute;
   width: ${(props) => props.active? '25vmin;': '30px'};
   top: ${(props) => props.active? '50%;': '25px'};
   right: ${(props) => props.active? '50%;': '25px'};
