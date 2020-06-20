@@ -39,6 +39,7 @@ const CalendarButton = styled.button<CalendarProps>`
   
 `
 
+
 /** @description Style for the close button (it is a div because buttons have to many styles) */
 const StyledClose = styled.button<CalendarProps>`
   position: absolute;
@@ -107,6 +108,13 @@ active = false => icon have delay and content fade out faster
 // margin-bottom: 20px;
 // `
 
+
+const ModalContainer = styled.div`
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+`
+
 /** @description this is the modal to display the calendar button, the children's are displayed inside a div centered in the screen */
 const ModalCalendar: React.FC = ({ children }) => {
   const [active, setActive] = useState(false);
@@ -139,4 +147,4 @@ const ModalCalendar: React.FC = ({ children }) => {
   </Content>
   </>)
 };
-export default ModalCalendar
+export {ModalCalendar, ModalContainer}

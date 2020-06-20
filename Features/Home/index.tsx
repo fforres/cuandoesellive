@@ -8,7 +8,7 @@ import {
   Link,
   ButtonWrapper,
 } from "./elements";
-import { ModalCalendar } from "../../Components/Modal";
+import { ModalCalendar, ModalContainer } from "../../Components/Modal";
 
 const Title: React.FC<{
   time?: Date;
@@ -23,15 +23,20 @@ export const Home: React.FC<{
   return (
     <>
       <PageTitle>¿Cuándo es el Live?</PageTitle>
-      <Panel>
-        <ModalCalendar/>
-        <Title time={time} />
-        <PanelText>{title}</PanelText>
-        <Link href="https://noders.live">https://noders.live</Link>
-      </Panel>
+      
+        <Panel>
+          <Title time={time} />
+          <PanelText>{title}</PanelText>
+          <Link href="https://noders.live">https://noders.live</Link>
+        </Panel>
       <ButtonWrapper>
         <Button>Mas eventos</Button>
       </ButtonWrapper>
+      <ModalContainer>
+        <div style={{width:'100%', height:'400px', border:'2px solid black'}}>
+        </div>
+        <ModalCalendar/>
+      </ModalContainer>
     </>
   );
 };
