@@ -16,7 +16,7 @@ type KeyPress = {
 const diameter = (active: Boolean) => active? `300vmax`: "132px"
 
 
-const StyledButton = styled.div<CalendarProps>`
+const CalendarButton = styled.button<CalendarProps>`
   position: fixed;
   overflow: hidden;
   right: 0px; 
@@ -29,12 +29,22 @@ const StyledButton = styled.div<CalendarProps>`
   background: ${Theme.colors.purpleBase};
   cursor:${(props) => props.active? 'default': 'pointer'};
   transition: 2s;
+  border-color: #fff;
+  border: 0;
+  & :focus {
+    outline: 0px;
+    border: 3px;
+    border-color: #CCC;
+    border-style: solid;
+  }
+  
 `
 
 /** @description Style for the close button (it is a div because buttons have to many styles) */
-const StyledClose = styled.div<CalendarProps>`
+const StyledClose = styled.button<CalendarProps>`
   position: fixed;
   opacity: ${(props) => props.active? '1': '0'};
+  background: rgba(0,0,0,0) ;
   width: 25px;
   height: 25px;
   right: 10px;
@@ -46,6 +56,10 @@ const StyledClose = styled.div<CalendarProps>`
   transition: 2s;
   display:flex;
   vertical-align: middle;
+  & :focus {
+    outline:0px;
+    border-color: #CCC;
+  }
   & span { 
     transition: 2s;
     font-size: 1em;
@@ -112,8 +126,7 @@ const ModalCalendar: React.FC = ({ children }) => {
   },[])
   return (
   <> 
-  <StyledButton onClick={() => {if(!active) open()}} active={active}>
-  </StyledButton>;
+  <CalendarButton onClick={() => {if(!active) open()}} active={active} />
   <StyledClose onClick={() => close()} active={active} >
     <span>X</span>
   </StyledClose>
